@@ -1,0 +1,3 @@
+#!/bin/bash
+
+carton exec -- perl -I lib/ -I auto-lib/ bin/paws Lambda --region us-east-1 UpdateFunctionCode FunctionName my_func ZipFile "$(zip -rq - . | base64)"
